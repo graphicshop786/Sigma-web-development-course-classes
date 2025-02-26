@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Types of CSS adding</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Ensure styles.css is in the same folder -->
+    <style>
+        /* Internal Style Example */
+        #internal p {
+            color: white;
+            background-color: navy;
+            padding: 15px;
+            font-size: 18px;
+            border-radius: 5px;
+        }
+        code {
+            background-color: #f4f4f4;
+            padding: 5px;
+            display: block;
+            margin-top: 10px;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+    <h1>Style Types In CSS</h1>
+    <ol>
+        <li><a href="#inline">Inline Style</a></li>
+        <li><a href="#internal">Internal Style</a></li>
+        <li><a href="#external">External</a></li>
+    </ol>
+
+    <div id="inline">
+        <h2>Inline Style</h2>
+        <p style="color: tomato; background-color: black; padding: 15px; font-size: 18px; border-radius: 5px;">Inline styles are applied directly to the HTML elements using the `style` attribute.</p>
+        <p>Code used:</p>
+        <code>&lt;p style="color: tomato; background-color: black; padding: 15px; font-size: 18px; border-radius: 5px;"&gt;...&lt;/p&gt;</code>
+    </div>
+
+    <div id="internal">
+        <h2>Internal Style</h2>
+        <p>Internal styles are defined within the &lt;style&gt; tag inside the &lt;head&gt; section of the HTML document.</p>
+        <p>Code used:</p>
+        <code>
+            &lt;style&gt;<br>
+            #internal p {<br>
+                color: white;<br>
+                background-color: navy;<br>
+                padding: 15px;<br>
+                font-size: 18px;<br>
+                border-radius: 5px;<br>
+            }<br>
+            &lt;/style&gt;
+        </code>
+    </div>
+
+    <div id="external">
+        <h2>External Style</h2>
+        <p>External styles are defined in an external CSS file which is linked to the HTML document using the &lt;link&gt; tag.</p>
+        <p>Code used:</p>
+        <code>
+            /* In styles.css */<br>
+            #external p {<br>
+                color: green;<br>
+                background-color: lightyellow;<br>
+                padding: 15px;<br>
+                font-size: 18px;<br>
+                border: 2px dashed black;<br>
+                border-radius: 5px;<br>
+            }<br>
+            /* In HTML */<br>
+            &lt;link rel="stylesheet" href="styles.css"&gt;
+        </code>
+    </div>
+
+    <p>By using these different types of CSS adding, you can style your HTML documents in various ways to create visually appealing web pages.</p>
+</body>
+</html>

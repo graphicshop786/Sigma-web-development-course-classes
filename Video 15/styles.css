@@ -1,0 +1,9 @@
+/* styles.css */
+#external p {
+    color: green;
+    background-color: lightyellow;
+    padding: 15px;
+    font-size: 18px;
+    border: 2px dashed black;
+    border-radius: 5px;
+}
