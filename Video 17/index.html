@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Selectors</title>
+
+    <style>
+        /* Selecting all h1 elements */
+        h1 {
+            color: rgb(0, 255, 153);
+        }
+        
+        /* Selecting h1 elements with a specific class */
+.tamato{ background-color: tomato;
+    color: black;}
+    /* Selecting h1 elements with a specific id */
+    #myId {
+            color: blue;
+        }
+
+        /* Selecting all p elements that are children of a div element */
+div > p {
+            color: orange;
+        }
+
+        /* desendant selector */
+        div p {
+            color: green;
+        }
+        /* universal selector */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        /* pseudo selector */
+        a:visited {
+            background-color: green;
+            
+          
+        }
+        a:link {
+            background-color: teal;
+            color: white;
+
+        a:active {
+            background-color: red;
+        }
+        a:hover {
+          background-color: violet;
+        }
+     
+        </style>
+</head>
+
+<body>
+    <h1>This is enteral Css Class</h1>
+    <h1 class="tamato">This is enteral Css Class</h1>
+    <div id="myId">
+Hi this is Bilal Hussain, I am learning CSS.
+<article>
+<p>Hi this is Bilal Hussain, I am learning CSS.</p>
+</article>
+    </div>
+    <div class="myClass">
+        <a href="http://www.facebook.com/graphicshop786" target="_blank">Open My Facebook</a>
+        <br>
+        <a href="http://www.Google.com" target="_blank">Open Google</a>
+    </div>
+   
+</body>
+</html>
