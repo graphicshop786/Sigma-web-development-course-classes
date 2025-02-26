@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI ChatBot & Story Generator - GraphicShop</title>
+  <meta name="description" content="Chat with Bilal, a software engineer and technology enthusiast known for his innovative solutions and passion for coding.">
+  <meta name="keywords" content="also viewed, chatbot, ai, artificial intelligence, graphicshop, bilal, software engineer, technology enthusiast, innovative solutions, passion for coding">
+  <meta name="author" content="GraphicShop">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.3/dist/tailwind.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body class="flex flex-col min-h-screen" style="background: rgb(63,94,251); background: -moz-linear-gradient(101deg, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%); background: -webkit-linear-gradient(101deg, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%); background: linear-gradient(101deg, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%); filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#3f5efb',endColorstr='#fc466b',GradientType=1);">
+  <header class="container mx-auto py-4">
+    <h1 class="text-3xl font-bold text-center text-white">AI ChatBot & Story Generator - GraphicShop</h1>
+  </header>
+  <main class="flex-grow container mx-auto py-6 px-4">
+    <section id="chatbot" class="mb-8">
+      <div class="h-full w-full max-w-2xl mx-auto">
+        <div id="chatbox" class="flex flex-col items-start overflow-y-auto h-full p-1 rounded"></div>
+        <input type="text" id="messageInput" placeholder="Type a message..." class="w-full p-2 mt-2 border rounded" />
+        <button class="send-button mt-2">Ask ME</button>
+        <button class="clear-button mt-2">Clear Chat</button>
+      </div>
+      <div id="chat-output" class="mt-4">
+        <h2 class="text-2xl font-bold text-white">Chat Output</h2>
+        <div id="chat-text" class="bg-white p-4 rounded mt-2"></div>
+        <h2 class="text-2xl font-bold text-white mt-4">Code Output</h2>
+        <pre id="chat-code" class="bg-gray-800 text-white p-4 rounded mt-2"></pre>
+        <button id="copy-code-button" class="bg-green-500 hover:bg-green-400 text-white font-bold py-2 px-4 border-b-4 border-green-700 hover:border-green-500 rounded mt-2">Copy Code</button>
+      </div>
+    </section>
+
+    <!-- Story Generator -->
+
+    <section id="story-generator">
+      <div class="container mx-auto p-4">
+        <h1 class="text-4xl font-bold mb-4 text-center">Story Generator</h1>
+        <form id="story-form" class="space-y-4 mx-auto max-w-md">
+          <div>
+            <select id="story-category" class="font-bold text-center mt-1 block w-full py-2 px-3 bg-transparent border-b border-gray-300 focus:border-indigo-500 focus:ring-0">
+              <option value="fairy_tales">Fairy Tales</option>
+              <option value="animals">Animals</option>
+              <option value="fantasy">Fantasy</option>
+              <option value="science_fiction">Science Fiction</option>
+              <option value="mystery">Mystery</option>
+              <option value="adventure">Adventure</option>
+              <option value="sports">Sports</option>
+              <option value="school">School</option>
+            </select>
+            <label for="story-category" class="block text-sm font-medium text-gray-700 text-center">Select story category</label>
+          </div>
+          <div>
+            <select id="story-topic" class="font-bold text-center mt-1 block w-full py-2 px-3 bg-transparent border-b border-gray-300 focus:border-indigo-500 focus:ring-0">
+              <option value="friendship">Friendship</option>
+              <option value="family">Family</option>
+              <option value="magic">Magic</option>
+              <option value="space">Space</option>
+              <option value="nature">Nature</option>
+              <option value="history">History</option>
+              <option value="heroes">Heroes</option>
+              <option value="holidays">Holidays</option>
+              <option value="travel">Travel</option>
+            </select>
+            <label for="story-topic" class="block text-sm font-medium text-gray-700 text-center">Select story topic</label>
+          </div>
+          <div>
+            <select id="story-length" class="font-bold text-center mt-1 block w-full py-2 px-3 bg-transparent border-b border-gray-300 focus:border-indigo-500 focus:ring-0">
+              <option value="short">Short (250 words)</option>
+              <option value="medium">Medium (600 words)</option>
+              <option value="long">Long (1000 words) </option>
+            </select>
+            <label for="story-length" class="block text-sm font-medium text-gray-700 text-center">Select story length</label>
+          </div>
+          <div>
+            <select id="sentences-per-paragraph" class="font-bold text-center mt-1 block w-full py-2 px-3 bg-transparent border-b border-gray-300 focus:border-indigo-500 focus:ring-0">
+              <option value="1">1 sentence</option>
+              <option value="2">2 sentences</option>
+              <option value="3">3 sentences </option>
+              <option value="4">4 sentences </option>
+              <option value="5">5 sentences </option>
+            </select>
+            <label for="sentences-per-paragraph" class="block text-sm font-medium text-gray-700 text-center">Select number of sentences per paragraph</label>
+          </div>
+          <div>
+            <select id="sentence-length" class="font-bold text-center mt-1 block w-full py-2 px-3 bg-transparent border-b border-gray-300 focus:border-indigo-500 focus:ring-0">
+              <option value="short">Short</option>
+              <option value="medium">Medium</option>
+              <option value="long">Long</option>
+            </select>
+            <label for="sentence-length" class="block text-sm font-medium text-gray-700 text-center">Select length of sentences</label>
+          </div>
+          <div>
+            <div class="quantity-input">
+              <button type="button" id="minus-button" class="bg-gray-300 font-bold text-lg">-</button>
+              <input type="number" id="num-children" required="" min="1" max="10" class="font-bold bg-transparent">
+              <button type="button" id="plus-button" class="bg-gray-300 font-bold text-lg">+</button>
+            </div>
+            <label for="num-children" class="block text-sm font-medium text-gray-700 text-center">Number of children</label>
+          </div>
+          <div id="children-inputs"></div>
+          <button type="submit" class="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 w-full border-b-4 border-blue-700 hover:border-blue-500 rounded">Generate a Fun Story!</button>
+        </form>
+        <div id="spinner" class="spinner hidden my-8 mx-auto"></div>
+        <div id="story-image" class="my-8 px-4"></div>
+        <div id="output" class="my-2 text-xl"></div>
+        <div id="title-output" class="my-2 text-2xl font-bold"></div>
+        <div id="paragraphs-output" class="my-2 text-xl"></div>
+      </div>
+      <div class="text-center px-4" id="buttons">
+        <button id="copy-button" class="bg-green-500 hover:bg-green-400 w-half text-white font-bold py-2 px-4 border-b-4 border-green-700 hover:border-green-500 rounded hidden mr-2">Copy Story</button>
+        <button id="reset-button" class="bg-red-500 hover:bg-red-400 w-half text-white font-bold py-2 px-4 border-b-4 border-red-700 hover-border-red-500 rounded hidden">Reset Story</button>
+      </div>
+    </section>
+  </main>
+  <footer class="sticky bottom-0 w-full text-white text-center py-2" style="background: rgb(63,94,251); background: -moz-linear-gradient(101deg, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%); background: -webkit-linear-gradient(101deg, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%); background: linear-gradient(101deg, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%); filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#3f5efb',endColorstr='#fc466b',GradientType=1);">
+    <p>&copy; 2025 GraphicShop. All rights reserved.</p>
+  </footer>
+  <script src="scripts.js"></script>
+</body>
+</html>
