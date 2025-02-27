@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Box Model</title>
+    <style>
+        /* Box Model */
+        * {
+            margin: 0;
+            padding: 0;
+           
+        }
+        
+        /* Container */
+        .box {
+            background-color: rgb(152, 253, 0) ;
+            
+        }
+.box1{
+       color: tomato; 
+       padding: 10px; 
+         margin: 25px; 
+         border: 2px solid black;
+         height: 200px;
+         box-sizing: border-box;
+}
+
+.box2{
+         color: teal;  
+         padding: 10px; 
+         margin: 25px; 
+         border: 2px solid black;
+         height: 200px;
+         box-sizing: border-box;
+        }
+
+
+
+
+
+
+
+    </style>
+       
+</head>
+<body>
+  
+    <div class="box box1">
+        <h2>Box Model</h2>
+        <p>The CSS box model is essentially a box that wraps around every HTML element. It consists of: margins, borders, padding, and the actual content.</p>
+        <p>The box model allows us to add a border around elements, and to define space between elements.</p>
+        <p>It also allows us to add space inside an element.</p>
+
+    </div>
+ <div class="box box2">
+        <h2>Margin</h2>
+        <p>Margin is the space outside the border of an element. It can be set on all sides (top, right, bottom, left) using the margin property.</p>
+        <p>In the following example, the box will have a margin of 20 pixels on all sides.</p>
+    </div>
+
+
+
+
+
+
+</body>
+</html>
